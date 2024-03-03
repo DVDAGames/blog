@@ -14,8 +14,7 @@ content:
         required: true
       - name: date
         label: Date
-        type: date
-        format: YYYY-MM-DD
+        type: string
       - name: excerpt
         label: Blurb
         type: string
