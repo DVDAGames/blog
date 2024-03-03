@@ -1,0 +1,14 @@
+---
+title: Testing Pages CMS
+excerpt: Testing a GitHub Pages CMS platform
+coverImage: /assets/hello-world/cover.jpg
+author:
+  name: DVDA Games
+  picture: /assets/authors/dvda.png
+ogImage:
+  url: /assets/blog/hello-world/cover.jpg
+preview: false
+---
+## Testing
+
+This is a test.
