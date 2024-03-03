@@ -7,7 +7,6 @@ content:
     label: Posts
     path: _posts
     type: collection
-    format: yaml-frontmatter
     filename: fields.title
     fields:
       - name: title
