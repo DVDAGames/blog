@@ -1,6 +1,6 @@
 ---
 title: Hello, World!
-date: '"2023-03-02"'
+date: 2023-03-02
 excerpt: DVDA Games is part wannabe indie game studio and part open-source tool
   developer.
 coverImage: /assets/blog/hello-world/cover.jpg
