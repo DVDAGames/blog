@@ -1,5 +1,6 @@
 ---
 title: Hello, World!
+date: "2023-03-02"
 excerpt: DVDA Games is part wannabe indie game studio and part open-source tool
   developer.
 coverImage: /assets/blog/hello-world/cover.jpg
@@ -31,7 +32,7 @@ We've been working on some fun stuff at the intersection of old-school table-top
 This has been an idea in the making for a long time, and it will probably continue to linger in the making for a while longer, but we've released a few things over the years:
 
 *   [React Hex Flower Engine](https://dvdagames.github.io/react-hex-flower-engine/): an implementation of [Goblin's Henchman's Hex Flower Engine](https://goblinshenchman.wordpress.com/2018/10/25/2d6-hex-power-flower/) in React, hosted on GitHub pages. It's a tool for generating random encounters, adventures, and more.  
-    ![](/assets/hello-world/hex-flower.gif)
+    ![hex flower engine demo](/assets/blog/hello-world/hex-flower.gif)
     
     > A versatile game engine using 2D6 and a 19-Hex Flower (it’s like a random table, but with a memory).
     
@@ -44,13 +45,13 @@ This has been an idea in the making for a long time, and it will probably contin
 *   [Master of Coin](https://dvdagames.github.io/master-of-coin/): an economy simulator that puts you into the shoes of a newly minted "Master of Coin" in a parody of the world of Westeros from A Song of Ice and Fire (Game of Thrones if you prefer video to the written word). Created for [Ludum Dare 44](https://ldjam.com/events/ludum-dare/44/master-of-coin), the intricacies of simulation took so long that the user interface (UI) was never completed, so it's just some default inputs.
     
 *   [Pulsar](https://github.com/DVDAGames/pulsar): a basic space shooter that mixes elements of asteroids and bullet hell games with a shapeshifting system for regenerating your limited ammunition. Created for [Ludum Dare 35](https://web.archive.org/web/20190317153309/http://ludumdare.com/compo/ludum-dare-35/), unfortunately a [misconfigured](https://github.com/DVDAGames/pulsar/blob/master/.gitignore#L2) `.gitignore` lead to the loss of the main application logic, but a cross-platform build of the [final, submitted version](https://github.com/DVDAGames/pulsar/releases/tag/0.2.1) with gamepad support is still available on GitHub.  
-    ![](/assets/hello-world/pulsar-demo.gif)
+    ![pulsar gameplay demo](/assets/blog/hello-world/pulsar-demo.gif)
     
     > A mediocre top down shooter that's like if Asteroids and a bullet-hell game both had weird cousins that liked to hang out and they got drunk one weekend and decided to make their own game.
     
 *   [Simpledoku](https://github.com/DVDAGames/simpledoku): a basic Sudoku UI with a [poorly implemented Sudoku solver](https://github.com/DVDAGames/simpledoku/blob/master/src/utilities/solver.js) that lead to pre-generating and hardcoding some puzzles rather than generating them on the fly, but had a nice quality of life feature that allowed you to highlight a specific row, column, the intersection of a row and a column, or a subgrid to help you focus on the numbers in each relevant category. It was my first attempt at desktop JavaScript via [Electron](https://www.electronjs.org/) and my last attempt at a game that I don't actually enjoy playing very much.
     
-    ![](/assets/hello-world/simpledoku.gif)
+    ![simpledoku UI demo](/assets/blog/hello-world/simpledoku.gif)
     
 
 _P.S. - Huge props to_ [_Kyle Schuller's_](https://github.com/KyleSchuller) _amazing_ [_ArtPOD GPT_](https://chat.openai.com/g/g-uBgm41tj8-artpod) _for the awesome header image!_
