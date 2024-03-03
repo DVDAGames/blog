@@ -5,7 +5,7 @@ media:
 content:
   - name: posts
     label: Posts
-    path: _posts
+    path: /_posts
     type: collection
     format: yaml-frontmatter
     filename: fields.title
