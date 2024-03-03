@@ -36,7 +36,7 @@ content:
             label: Avatar
             type: image
             options:
-              path: public/assets/blog/authors
+              path: blog/authors
               extensions: [jpg, jpeg, png, gif]
       - name: ogImage
         label: OpenGraph Image
