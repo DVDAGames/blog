@@ -6,7 +6,7 @@ content:
     label: Posts
     path: _posts
     type: collection
-    filename: fields.title
+    filename: {fields.title}
     fields:
       - name: title
         label: Title
