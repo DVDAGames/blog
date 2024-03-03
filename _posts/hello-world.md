@@ -1,6 +1,6 @@
 ---
 title: Hello, World!
-date: "2023-03-02"
+date: 2023-03-02
 excerpt: DVDA Games is part wannabe indie game studio and part open-source tool
   developer.
 coverImage: /assets/blog/hello-world/cover.jpg
@@ -24,8 +24,7 @@ DVDA Games is part wannabe indie game studio and part open-source tool developer
 We've been working on some fun stuff at the intersection of old-school table-top role-playing games (TTRPGs) and modern technology for the technologically inclined Dungeon Master (DM):
 
 *   [Gygax AI](https://github.com/DVDAGames/local-tabletop-ai-demo): a demo of using a local Large Language Model (LLM) as a DM helper for TTRPGs like [Dungeons & Dragons](https://dnd.wizards.com/). It's a proof of concept for using a language model to generate random descriptions, use tools to roll dice, and reference rules like the [Fifth Edition Systems Reference Document](https://dnd.wizards.com/resources/systems-reference-document) (SRD). The initial demo focuses on low-powered hardware and runs on a 2012 Macbook Pro with using the [Orca Mini 7b model](https://huggingface.co/pankajmathur/orca_mini_7b).
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/hC-28WmlZRk?si=OMuy7lJBu8NlUNh9" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    
 
 ## Past projects
 
@@ -35,6 +34,11 @@ This has been an idea in the making for a long time, and it will probably contin
     ![hex flower engine demo](/assets/blog/hello-world/hex-flower.gif)
     
     > A versatile game engine using 2D6 and a 19-Hex Flower (it’s like a random table, but with a memory).
+    
+*   [GameMaker Platformer Demo](https://github.com/DVDAGames/gamemaker-platformer-demo): a quick demo testing basic platforming concepts in GameMaker including jumping, gravity, enemies, powerups, checkpoints, platforms with activated fallthrough, level switching, etc. It was a fun chance to play around with GameMaker and learn some of the basics.
+    
+    ![](/assets/blog/hello-world/platformer.gif)  
+    **Note**: This was made in the `1.x` branch of GameMaker, but you can still import the `.gmx` project file into GameMaker Studio 2.
     
 *   [Roller](https://github.com/DVDAGames/js-die-roller): a TypeScript library for rolling dice with support for complex expressions, variables, and more with random numbers generated with [reduced bias](https://dimitri.xyz/random-ints-from-random-bits/). It powers the React Hex Flower Engine and also includes an [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for parsing and evaluating dice expressions like `d20 + 5`, `3d6 + 2d8`, or `max(2d20)`.
     
