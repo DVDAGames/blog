@@ -9,7 +9,7 @@ author:
   picture: /assets/blog/authors/dvda.png
 ogImage:
   url: /assets/blog/hello-world/cover.jpg
-preview: true
+preview: false
 ---
 Dead Villager Dead Adventurer (DVDA) Games is named for those fallen souls in the [Diablo games](https://en.wikipedia.org/wiki/Diablo_%28video_game%29) who gave their lives in pursuit of adventure or were just unfortunate enough to encounter the horrors outside of the relative safety of town.
 
