@@ -2,6 +2,7 @@ import { Post } from "@/interfaces/post";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { parseISO } from "date-fns";
 
 const postsDirectory = join(process.cwd(), "_posts");
 
@@ -14,6 +15,10 @@ export function getPostBySlug(slug: string) {
   const fullPath = join(postsDirectory, `${realSlug}.md`);
   const fileContents = fs.readFileSync(fullPath, "utf8");
   const { data, content } = matter(fileContents);
+
+  if (typeof data?.date?.toISOString !== "undefined") {
+    data.date = data.date.toISOString();
+  }
 
   return { ...data, slug: realSlug, content } as Post;
 }
