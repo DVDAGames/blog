@@ -1,0 +1,56 @@
+media:
+  input: public/assets
+  output: /assets
+  path: blog
+content:
+  - name: posts
+    label: Posts
+    path: _posts
+    type: collection
+    format: yaml-frontmatter
+    filename: fields.title
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: excerpt
+        label: Blurb
+        type: string
+        required: true
+      - name: coverImage
+        label: Featured Image
+        type: image
+        options:
+          path: public/assets/blog
+          extensions: [jpg, jpeg, png, gif]
+      - name: author
+        label: Author
+        type: object
+        required: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+            required: true
+          - name: picture
+            label: Avatar
+            type: image
+            options:
+              path: public/assets/authors
+              extensions: [jpg, jpeg, png, gif]
+      - name: ogImage
+        label: OpenGraph Image
+        type: object
+        fields:
+          - name: url
+            label: URL
+            type: string
+      - name: preview
+        label: Preview
+        type: boolean
+        default: true
+      - name: body
+        label: Body
+        type: rich-text
+        
