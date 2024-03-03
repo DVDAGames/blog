@@ -37,7 +37,7 @@ This has been an idea in the making for a long time, and it will probably contin
     
 *   [GameMaker Platformer Demo](https://github.com/DVDAGames/gamemaker-platformer-demo): a quick demo testing basic platforming concepts in GameMaker, including jumping, gravity, enemies, powerups, checkpoints, platforms with activated fallthrough, level switching, etc. It was a fun chance to play with GameMaker and learn some basics.
     
-    ![](/assets/blog/hello-world/platformer.gif)  
+    ![platformer demo](/assets/blog/hello-world/platformer.gif)  
     **Note**: This was made in the `1.x` branch of GameMaker, but you can still import the `.gmx` project file into GameMaker Studio 2.
     
 *   [Roller](https://github.com/DVDAGames/js-die-roller): a TypeScript library for rolling dice supporting complex expressions, variables, and more with random numbers generated with [reduced bias](https://dimitri.xyz/random-ints-from-random-bits/). It powers the React Hex Flower Engine and also includes an [Abstract Syntax Tree](https://en.wikipedia.org/wiki/Abstract_syntax_tree) (AST) for parsing and evaluating dice expressions like `d20 + 5`, `3d6 + 2d8`, or `max(2d20)`.
