@@ -1,7 +1,6 @@
 media:
-  input: public/assets
+  input: public/assets/blog
   output: /assets
-  path: /blog
 content:
   - name: posts
     label: Posts
