@@ -1,6 +1,6 @@
 ---
 title: Hello, World!
-date: 2023-03-02
+date: 2024-03-02
 excerpt: DVDA Games is part wannabe indie game studio and part open-source tool
   developer.
 coverImage: /assets/blog/hello-world/cover.jpg
@@ -10,6 +10,7 @@ author:
 ogImage:
   url: /assets/blog/hello-world/cover.jpg
 preview: false
+featured: true
 ---
 Dead Villager Dead Adventurer (DVDA) Games is named for those fallen souls in the [Diablo games](https://en.wikipedia.org/wiki/Diablo_%28video_game%29) who gave their lives in pursuit of adventure or were just unfortunate enough to encounter the horrors outside of the relative safety of the town.
 
