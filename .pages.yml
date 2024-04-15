@@ -51,6 +51,10 @@ content:
         label: Preview
         type: boolean
         default: true
+      - name: featured
+        label: Featured Post
+        type: boolean
+        default: false
       - name: body
         label: Body
         type: rich-text
