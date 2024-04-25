@@ -1,7 +1,9 @@
-import Footer from "@/app/_components/footer";
-import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 import type { Metadata } from "next";
 import { IBM_Plex_Mono } from "next/font/google";
+
+import EasterEgg from "@/app/_components/easter-egg";
+import Footer from "@/app/_components/footer";
+import { HOME_OG_IMAGE_URL } from "@/lib/constants";
 
 import "./globals.css";
 
@@ -12,7 +14,7 @@ const ibm = IBM_Plex_Mono({
 
 export const metadata: Metadata = {
   title: `Dead Villager Dead Adventurer Games`,
-  description: `A wannabe indie game developer.`,
+  description: `A wannabe indie game studio and open source tool developer.`,
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
@@ -41,6 +43,7 @@ export default function RootLayout({
       <body className={ibm.className}>
         <div className="min-h-screen">{children}</div>
         <Footer />
+        <EasterEgg />
       </body>
     </html>
   );

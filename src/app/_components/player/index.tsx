@@ -29,16 +29,13 @@ export function Player({ tracks = [], autoplay = false, loop = false }: PlayerPr
 
   const togglePlay = (): void => {
     setIsPlaying((prev) => !prev);
-    console.log("togglePlay", isPlaying);
   };
 
   const togglePlaylist = (): void => {
     setShowPlaylist((prev) => !prev);
-    console.log("togglePlayList", showPlaylist);
   };
 
   useEffect(() => {
-    console.log(currentTrack);
     if (playerRef.current && currentTrack) {
       if (isPlaying) {
         playerRef.current.play();
