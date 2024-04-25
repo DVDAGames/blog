@@ -1,4 +1,7 @@
 import Container from "@/app/_components/container";
+import Player from "@/app/_components/player";
+
+import trackList from "@/app/_components/player/tracks";
 
 export function Footer() {
   return (
@@ -23,6 +26,9 @@ export function Footer() {
           </div>
         </div>
       </Container>
+      <section className="fixed flex bottom-0 right-0 justify-start items-center w-full min-h-[64px]">
+        <Player tracks={trackList} loop />
+      </section>
     </footer>
   );
 }
