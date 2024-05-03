@@ -5,8 +5,13 @@ type Props = {
 };
 
 const DateFormatter = ({ dateString }: Props) => {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "yyyy-MM-dd")}</time>;
+  try {
+    const date = parseISO(dateString);
+
+    return <time dateTime={dateString}>{format(date, "yyyy-MM-dd")}</time>;
+  } catch (e) {
+    return <span>{dateString}</span>;
+  }
 };
 
 export default DateFormatter;

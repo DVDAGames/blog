@@ -19,8 +19,11 @@ export function Footer() {
               <li className="mr-3">
                 <a href={`https://github.com/dvdagames/`}>GitHub</a>
               </li>
-              <li>
+              <li className="mr-3">
                 <a href={`https://twitter.com/dvdagames`}>Twitter</a>
+              </li>
+              <li>
+                <a href={`https://dvdagames.itch.io`}>Itch.io</a>
               </li>
             </ul>
           </div>

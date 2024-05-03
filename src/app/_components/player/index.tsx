@@ -53,12 +53,12 @@ export function Player({ tracks = [], autoplay = false, loop = false }: PlayerPr
           <img
             src={currentTrack.albumArt}
             alt={currentTrack.title}
-            className="w-[64px] h-[64px] border-solid border-white border-[5px]"
+            className="w-[96px] h-[96px] border-solid border-white border-[5px]"
           />
-          <div className="flex w-full min-h-[64px] pr-[20px]">
+          <div className="flex w-full min-h-[96px] pr-[20px] pl-[5px]">
             {currentTrack.title && (
               <button
-                className="flex w-full min-h-[64px] items-center text-2xl apperance-none hover:underline"
+                className="flex w-full min-h-[96px] items-center text-2xl apperance-none hover:underline"
                 onClick={togglePlaylist}
                 title={showPlaylist ? "Hide Playlist" : "Show Playlist"}
               >
@@ -68,11 +68,11 @@ export function Player({ tracks = [], autoplay = false, loop = false }: PlayerPr
           </div>
           <audio ref={playerRef} className="flex" autoPlay={autoplay} loop={loop} preload="metadata" src={currentTrack.url} />
           <button
-            className="h-[64px] w-[84px] pl-[20px] appearance-none fixed right-0 bottom-0 bg-white"
+            className="h-[96px] w-[96px] appearance-none fixed right-0 bottom-0 bg-white"
             onClick={togglePlay}
             title={isPlaying ? "Pause" : "Play"}
           >
-            <img src={`/assets/images/turntable.${isPlaying ? "gif" : "png"}`} alt="" height="64" width="64" />
+            <img className="mt-[-10px] ml-[10px]" src={`/assets/images/turntable-4x.${isPlaying ? "gif" : "png"}`} alt="" />
           </button>
         </div>
       </section>
