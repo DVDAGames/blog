@@ -4,7 +4,7 @@ import Header from "@/app/_components/header";
 import Container from "@/app/_components/container";
 import { PostTitle } from "@/app/_components/post-title";
 
-export function About(): React.ReactElement {
+export default async function About() {
   return (
     <main>
       <Container>
@@ -28,5 +28,3 @@ export function About(): React.ReactElement {
     </main>
   );
 }
-
-export default About;
