@@ -1,17 +1,19 @@
-import { type Author } from "./author";
+import type { CTA } from "./cta";
 
-export type Post = {
+export type Project = {
   slug: string;
   title: string;
+  url: string;
   date: string;
+  price: string;
   coverImage: string;
-  author: Author;
+  bannerImage: string;
   excerpt: string;
   ogImage: {
     url: string;
   };
+  ctas: CTA[];
   content: string;
-  preview?: boolean;
   featured?: boolean;
   archived?: boolean;
 };

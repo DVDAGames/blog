@@ -1,12 +1,19 @@
-import { parseISO, format } from "date-fns";
+import { format } from "date-fns/format";
 
 type Props = {
   dateString: string;
 };
 
 const DateFormatter = ({ dateString }: Props) => {
-  const date = parseISO(dateString);
-  return <time dateTime={dateString}>{format(date, "yyyy-MM-dd")}</time>;
+  try {
+    const date = format(dateString, "yyyy-MM-dd");
+
+    return <time dateTime={dateString}>{date}</time>;
+  } catch (e) {
+    console.log("ERROR: cannot parse date");
+    console.error(e);
+    return <span>{dateString.toString()}</span>;
+  }
 };
 
 export default DateFormatter;
