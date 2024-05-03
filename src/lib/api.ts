@@ -1,72 +1,86 @@
-import { Post } from "@/interfaces/post";
-import { Game } from "@/interfaces/game";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
+import type { Post } from "@/interfaces/post";
+import type { Game } from "@/interfaces/game";
+import type { Project } from "@/interfaces/project";
+import type { ContentType, Content } from "@/interfaces/content";
+
 const postsDirectory = join(process.cwd(), "_posts");
 const gamesDirectory = join(process.cwd(), "_games");
+const projectsDirectory = join(process.cwd(), "_projects");
 
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+export function getContentDirectory(contentType: ContentType = "post"): string {
+  if (contentType === "game") {
+    return gamesDirectory;
+  } else if (contentType === "project") {
+    return projectsDirectory;
+  }
+
+  return postsDirectory;
 }
 
-export function getGameSlugs() {
-  return fs.readdirSync(gamesDirectory);
+export function getContentSlugs(contentType: ContentType = "post"): string[] {
+  let directory = getContentDirectory(contentType);
+
+  return fs.readdirSync(directory);
+}
+
+export function getContentBySlug<T>(slug: string, contentType: ContentType = "post"): T {
+  const realSlug = slug.replace(/\.md$/, "");
+  const directory = getContentDirectory(contentType);
+  const fullPath = join(directory, `${realSlug}.md`);
+
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const { data, content } = matter(fileContents);
+
+  return { ...data, slug: realSlug, content } as T;
+}
+
+export function getAllContent<T>(contentType: ContentType = "post", includeArchive = false): T[] {
+  const slugs = getContentSlugs(contentType);
+
+  const allContent: Content[] = slugs.map((slug) => getContentBySlug(slug, contentType));
+
+  const featuredContent = allContent
+    .filter((item) => item.featured && !item.archived)
+    .sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
+
+  let content = allContent.filter((item) => !item.featured && !item.archived);
+
+  let archive: Content[] = [];
+
+  if (includeArchive) {
+    archive = allContent.filter((item) => typeof item?.archived !== "undefined" && item?.archived);
+  }
+
+  // sort posts by date in descending order
+  content.sort((item1, item2) => (item1.date > item2.date ? -1 : 1));
+
+  return [...(featuredContent as T[]), ...(content as T[]), ...(archive as T[])];
+}
+
+export function getAllPosts(includeArchive = false): Post[] {
+  return getAllContent<Post>("post", includeArchive) as Post[];
 }
 
 export function getPostBySlug(slug: string): Post {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+  return getContentBySlug<Post>(slug, "post");
+}
 
-  if (typeof data?.date?.toISOString !== "undefined") {
-    data.date = data.date.toISOString();
-  }
-
-  return { ...data, slug: realSlug, content } as Post;
+export function getAllGames(includeArchive = false): Game[] {
+  return getAllContent<Game>("game", includeArchive) as Game[];
 }
 
 export function getGameBySlug(slug: string): Game {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(gamesDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-
-  return { ...data, slug: realSlug, content } as Game;
+  return getContentBySlug<Game>(slug, "game");
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
-
-  const featuredPosts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .filter((post) => post.featured)
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    .filter((post) => !post.featured)
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-
-  return [...featuredPosts, ...posts];
+export function getAllProjects(includeArchive = false): Project[] {
+  return getAllContent<Project>("project", includeArchive) as Project[];
 }
 
-export function getAllGames(): Game[] {
-  const slugs = getGameSlugs();
-
-  const featuredGames = slugs
-    .map((slug) => getGameBySlug(slug))
-    .filter((game) => game.featured)
-    .sort((game1, game2) => (game1.releaseDate > game2.releaseDate ? -1 : 1));
-
-  const games = slugs
-    .map((slug) => getGameBySlug(slug))
-    .filter((game) => !game.featured)
-    // sort games by date in descending order
-    .sort((game1, game2) => (game1.releaseDate > game2.releaseDate ? -1 : 1));
-
-  return [...featuredGames, ...games];
+export function getProjectBySlug(slug: string): Project {
+  return getContentBySlug<Project>(slug, "project");
 }

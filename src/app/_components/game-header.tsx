@@ -1,7 +1,7 @@
 import CoverImage from "./cover-image";
 import DateFormatter from "./date-formatter";
 import { PostTitle } from "@/app/_components/post-title";
-import { CTA } from "@/interfaces/game";
+import { CTA } from "@/interfaces/cta";
 
 type Props = {
   title: string;

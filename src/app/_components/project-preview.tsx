@@ -13,11 +13,11 @@ type Props = {
   ctas: CTA[];
 };
 
-export function GamePreview({ title, coverImage, releaseDate, excerpt, slug, price, ctas }: Props) {
+export function ProjectPreview({ title, coverImage, releaseDate, excerpt, slug, price, ctas }: Props) {
   return (
     <div className="w-[33%]">
       <h3 className="text-xl mb-3 leading-snug">
-        <Link as={`/games/${slug}`} href="/games/[slug]" className="hover:underline">
+        <Link as={`/projects/${slug}`} href="/projects/[slug]" className="hover:underline">
           {title}
         </Link>
       </h3>

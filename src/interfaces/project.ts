@@ -1,8 +1,9 @@
 import type { CTA } from "./cta";
 
-export type Game = {
+export type Project = {
   slug: string;
   title: string;
+  url: string;
   date: string;
   price: string;
   coverImage: string;

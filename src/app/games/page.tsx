@@ -5,7 +5,7 @@ import Container from "../_components/container";
 import Header from "../_components/header";
 import { GamePreview } from "../_components/game-preview";
 
-export default async function Post() {
+export default async function Games() {
   const games = getAllGames();
 
   if (!games) {
@@ -24,7 +24,7 @@ export default async function Post() {
               key={game.slug}
               title={game.title}
               coverImage={game.coverImage}
-              releaseDate={game.releaseDate}
+              releaseDate={game.date}
               ctas={game.ctas}
               excerpt={game.excerpt}
               slug={game.slug}
@@ -52,4 +52,12 @@ export function generateMetadata(): Metadata {
       images: games.map((game) => game.ogImage.url),
     },
   };
+}
+
+export async function generateStaticParams() {
+  const games = getAllGames();
+
+  return games.map((game) => ({
+    slug: game.slug,
+  }));
 }

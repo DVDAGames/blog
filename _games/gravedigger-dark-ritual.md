@@ -5,7 +5,7 @@ coverImage: /assets/blog/gravedigger/cover.png
 bannerImage: /assets/blog/gravedigger/hero.png
 ogImage:
   url: /assets/blog/gravedigger/cover.png
-releaseDate: "TBD"
+date: "TBD"
 ctas:
   - label: "Play the Prototype"
     url: "https://dvdagames.itch.io/dark-ritual"

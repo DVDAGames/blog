@@ -18,7 +18,9 @@ export function Nav({ includeHome = true }: NavProps): React.ReactElement {
         <li className="mr-[20px]">
           <Link href="/games">Games</Link>
         </li>
-        <li className="mr-[20px]">Projects</li>
+        <li className="mr-[20px]">
+          <Link href="/projects">Projects</Link>
+        </li>
         <li className="">
           <Link href="/about">About</Link>
         </li>
