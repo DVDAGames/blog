@@ -22,7 +22,7 @@ export function GamePreview({ title, coverImage, releaseDate, excerpt, slug, pri
         </Link>
       </h3>
       <div className="mb-5">
-        <CoverImage slug={slug} title={title} src={coverImage} />
+        <CoverImage slug={slug} title={title} src={coverImage} type="games" />
       </div>
       <div className="text-lg mb-4">
         <strong>Release Date:</strong> <DateFormatter dateString={releaseDate} />
