@@ -19,6 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     images: [HOME_OG_IMAGE_URL],
   },
+  metadataBase: new URL("https://dvdagames.com"),
 };
 
 // @ts-disable

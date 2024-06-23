@@ -17,7 +17,8 @@ export function GameHeader({ title, bannerImage, releaseDate, ctas }: Props) {
       <div className="mb-8 md:mb-16 sm:mx-0">
         <CoverImage title={title} src={bannerImage} />
       </div>
-      {ctas.length > 0 &&
+      {typeof ctas !== "undefined" &&
+        ctas.length > 0 &&
         ctas.map((cta) => (
           <a key={cta.label} href={cta.url} className="btn">
             {cta.label}
