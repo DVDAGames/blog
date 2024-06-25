@@ -2,6 +2,13 @@ import type { Track } from "../../../lib/types";
 
 const trackList: Track[] = [
   {
+    title: "Line of Sight (Prototype)",
+    url: "/assets/audio/tracks/line-of-sight-prototype.wav",
+    mime: "audio/wav",
+    description: "Created using BeepBox for the Line of Sight prototype.",
+    albumArt: "/assets/album-art/line-of-sight.png",
+  },
+  {
     title: "Dark Ritual (LDJam 55 Compo Version)",
     url: "/assets/audio/tracks/dark-ritual-ldjam55.wav",
     mime: "audio/wav",
