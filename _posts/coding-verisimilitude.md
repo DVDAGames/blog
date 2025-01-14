@@ -16,7 +16,7 @@ Regardless of what kind of game you're making - or story you're telling - there'
 
 > **Verisimilitude** is the "lifelikeness" or believability of a [work of fiction](https://en.wikipedia.org/wiki/Fiction "Fiction").
 
-In some fictional worlds, this might mean that shopkeepers and other [NPCs can't see you when you put a bucket on their heads](insert-skyrim-link) and in others it might mean that shopkeepers and other NPCs get angry and attack you when you put a bucket on their heads.
+In some fictional worlds, this might mean that shopkeepers and other [NPCs can't see you when you put a bucket on their heads](https://www.escapistmagazine.com/skyrim-bucket-robbery-is-a-testament-to-player-creativity/) and in others it might mean that shopkeepers and other NPCs get angry and attack you when you put a bucket on their heads.
 
 In Line of Sight's fictional world, inspired by old-school, screen-based retro games, verisimilitude currently means that NPCs:
 
