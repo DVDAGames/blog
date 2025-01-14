@@ -131,3 +131,7 @@ Each guard NPC also has a random chance to get "spooked" and turn some degrees f
 I also have plans to keep track of an NPC-specific anxiety level based on how often their alerted state gets triggered and a global anxiety level that increases as more NPCs are alerted, leading to more cautious and vigilant behavior from NPCs who haven't encountered the player yet.
 
 These anxiety levels could change which patrol routes or idle behaviors NPCs exhibit, and could even lead to some NPCs abandoning their patrol routes to search for the player if the global anxiety level gets too high.
+
+## Caveat Lector
+
+There is probably a better way to handle this, but this is the way that I handled it. I've just been learning Godot by trying to make this game, so take this as a suggestion to think about verisimilitude in your own games and not necessarily a suggestion to implement it in the same way.
