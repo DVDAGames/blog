@@ -35,5 +35,9 @@
 }
 
 .markdown code {
-  @apply bg-gray-100 px-2 py-1 rounded;
+  @apply px-2 py-1 rounded;
+}
+
+.markdown pre > code {
+  @apply bg-gray-100 block overflow-x-scroll;
 }
