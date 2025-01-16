@@ -8,12 +8,14 @@ import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
 import rehypeStringify from "rehype-stringify";
+import remarkYoutube from "remark-youtube";
 
 import gdscript from "./gdscript.highlight";
 
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
     .use(remarkParse)
+    .use(remarkYoutube)
     .use(gfm)
     .use(html, { sanitize: false })
     .use(remarkRehype)

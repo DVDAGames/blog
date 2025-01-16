@@ -24,6 +24,8 @@ DVDA Games is part wannabe indie game studio and part open-source tool developer
 
 We've been working on some fun stuff at the intersection of old-school table-top role-playing games (TTRPGs) and modern technology for the technologically inclined Dungeon Master (DM):
 
+https://youtu.be/hC-28WmlZRk
+
 *   [Gygax AI](https://github.com/DVDAGames/local-tabletop-ai-demo): a demo of using a local Large Language Model (LLM) as a DM helper for TTRPGs like [Dungeons & Dragons](https://dnd.wizards.com/). It's a proof of concept for using a language model to generate random descriptions, use tools to roll dice, and reference rules like the [Fifth Edition Systems Reference Document](https://dnd.wizards.com/resources/systems-reference-document) (SRD). The initial demo focuses on low-powered hardware and runs on a 2012 Macbook Pro using the [Orca Mini 7b model](https://huggingface.co/pankajmathur/orca_mini_7b).
     
 

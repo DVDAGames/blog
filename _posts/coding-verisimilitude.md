@@ -12,7 +12,7 @@ preview: false
 ---
 While [Line of Sight](https://dvdagames.com/games/line-of-sight/) development is currently paused due to real-life concerns like income, rent, health insurance, and other boring stuff like that, that doesn't mean I can't share some insights from the development process.
 
-Regardless of what kind of game you're making - or story you're telling - there's one important property that can make your world feel real - maybe even "alive": [Verisimilitude](<https://en.wikipedia.org/wiki/Verisimilitude_(fiction)>).
+Regardless of what kind of game you're making - or story you're telling - there's one important property that can [make your world feel real](https://youtu.be/jvQXGs8IVBM?si=sEnrg61ydDTGcuBE&t=30) - maybe even "alive": [Verisimilitude](<https://en.wikipedia.org/wiki/Verisimilitude_(fiction)>).
 
 > **Verisimilitude** is the "lifelikeness" or believability of a [work of fiction](https://en.wikipedia.org/wiki/Fiction "Fiction").
 
