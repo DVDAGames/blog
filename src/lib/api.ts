@@ -2,6 +2,7 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
+import { POSTS_PER_PAGE } from "@/lib/constants";
 import type { Post } from "@/interfaces/post";
 import type { Game } from "@/interfaces/game";
 import type { Project } from "@/interfaces/project";
@@ -83,4 +84,20 @@ export function getAllProjects(includeArchive = false): Project[] {
 
 export function getProjectBySlug(slug: string): Project {
   return getContentBySlug<Project>(slug, "project");
+}
+
+export function getPagePosts(pageNumber = 0): Post[] {
+  const allPosts = getAllPosts();
+
+  const pagePosts = allPosts.slice(pageNumber * POSTS_PER_PAGE, (pageNumber + 1) * POSTS_PER_PAGE);
+
+  return pagePosts;
+}
+
+export function getTotalPosts(): number {
+  return getAllPosts().length;
+}
+
+export function getTotalPages(): number {
+  return Math.ceil(getTotalPosts() / POSTS_PER_PAGE);
 }
