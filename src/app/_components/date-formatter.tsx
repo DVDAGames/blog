@@ -9,9 +9,7 @@ const DateFormatter = ({ dateString }: Props) => {
     const date = format(dateString, "yyyy-MM-dd");
 
     return <time dateTime={dateString}>{date}</time>;
-  } catch (e) {
-    console.log("ERROR: cannot parse date");
-    console.error(e);
+  } catch (_e) {
     return <span>{dateString.toString()}</span>;
   }
 };
