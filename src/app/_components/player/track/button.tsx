@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useRef } from "react";
+import { useState } from "react";
 import MarqueeText from "react-marquee-text";
 
 import { displayDuration } from "../../../../lib/displayDuration";
@@ -11,7 +11,14 @@ export interface TrackButtonProps extends Track {
   onClick?: (track: Track) => void;
 }
 
-export function TrackButton({ title, url, mime = "audio/mpeg", description = "", albumArt = "", onClick }: TrackButtonProps) {
+export function TrackButton({
+  title,
+  url,
+  mime = "audio/mpeg",
+  description = "",
+  albumArt = "",
+  onClick,
+}: TrackButtonProps) {
   const [duration, setDuration] = useState(0);
   const [canPlay, setCanPlay] = useState(false);
 
@@ -21,7 +28,9 @@ export function TrackButton({ title, url, mime = "audio/mpeg", description = "",
     }
   };
 
-  const onMetadataLoaded = (event: React.SyntheticEvent<HTMLAudioElement, Event>): void => {
+  const onMetadataLoaded = (
+    event: React.SyntheticEvent<HTMLAudioElement, Event>
+  ): void => {
     const target = event.target as HTMLAudioElement;
 
     setDuration(target.duration);
@@ -31,15 +40,27 @@ export function TrackButton({ title, url, mime = "audio/mpeg", description = "",
   return (
     <>
       <audio src={url} preload="metadata" onLoadedMetadata={onMetadataLoaded} />
-      <button className="flex flex-row w-full items-center" onClick={onPlay} disabled={!canPlay} title={`Play ${title}`}>
+      <button
+        className="flex flex-row w-full items-center"
+        onClick={onPlay}
+        disabled={!canPlay}
+        title={`Play ${title}`}
+      >
         <img src={albumArt} alt={title} className="w-10 h-10" />
         <div className="ml-2 flex flex-row items-start text-sm w-full">
           <span className="w-11/12">
-            <MarqueeText direction="right" textSpacing="2rem" pauseOnHover>
+            <MarqueeText
+              direction="right"
+              textSpacing="2rem"
+              pauseOnHover
+              playOnlyInView
+            >
               {title}
             </MarqueeText>
           </span>
-          <span className="w-1/12 ml-auto pr-4">{displayDuration(duration)}</span>
+          <span className="w-1/12 ml-auto pr-4">
+            {displayDuration(duration)}
+          </span>
         </div>
       </button>
     </>

@@ -4,6 +4,7 @@ import { useState, useRef, useEffect } from "react";
 import { useInterval } from "usehooks-ts";
 import { useVisibilityChange } from "@uidotdev/usehooks";
 
+import { useIsMobile } from "../../../lib/hooks";
 import Playlist from "./playlist";
 import TrackDisplay from "./track/display";
 import { bars } from "./constants";
@@ -28,6 +29,7 @@ export function Player({
   showSpectrumAnalyzer = false,
 }: PlayerProps) {
   const isVisible = useVisibilityChange();
+  const isMobile = useIsMobile();
   const [oldTitle] = useState<string>(document.title);
 
   const [currentTrack, setCurrentTrack] = useState<Track>(tracks[0]);
@@ -51,7 +53,7 @@ export function Player({
     track: Track,
     abortSignal: AbortSignal
   ): Promise<void> => {
-    if (track) {
+    if (track && !isMobile) {
       const srcBuffer = await fetch(track.url, {
         signal: abortSignal,
       }).then((res) => res.arrayBuffer());
@@ -125,7 +127,7 @@ export function Player({
 
     if (playerRef.current && currentTrack) {
       if (isPlaying) {
-        if (showSpectrumAnalyzer) {
+        if (showSpectrumAnalyzer && !isMobile) {
           connectAnalyzerToTrack(
             currentTrack,
             analyzerTrackAbortController.signal
@@ -134,7 +136,7 @@ export function Player({
           playerRef.current.play();
         }
       } else {
-        if (showSpectrumAnalyzer) {
+        if (showSpectrumAnalyzer && !isMobile) {
           disconnectAnalyzer();
         } else {
           playerRef.current.pause();
@@ -171,7 +173,7 @@ export function Player({
 
   useInterval(
     () => {
-      if (isAnalyzing && analyzer) {
+      if (isAnalyzing && analyzer && !isMobile) {
         const dataArray = new Uint8Array(24);
 
         analyzer.getByteFrequencyData(dataArray);
@@ -222,6 +224,7 @@ export function Player({
                 <TrackDisplay
                   title={currentTrack.title}
                   key={currentTrack.title}
+                  duration={isPlaying ? undefined : 250}
                 />
               </button>
             )}
