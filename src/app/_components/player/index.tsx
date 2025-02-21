@@ -100,14 +100,12 @@ export function Player({
       analyzer.disconnect();
     }
 
-    if (isAnalyzing) {
-      document.title = oldTitle;
+    document.title = oldTitle;
 
-      try {
-        location.hash = " ";
-      } catch (error) {
-        console.error(error);
-      }
+    try {
+      location.hash = "<";
+    } catch (error) {
+      console.error(error);
     }
   };
 
@@ -175,7 +173,7 @@ export function Player({
 
         try {
           if (isVisible) {
-            location.hash = `${wave}`;
+            location.hash = `<${wave}`;
 
             if (document.title !== oldTitle) {
               document.title = oldTitle;
