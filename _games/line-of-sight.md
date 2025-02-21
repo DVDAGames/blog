@@ -9,6 +9,8 @@ date: "In Development"
 price: ""
 ---
 
+![Line of Sight Sniper Scope Demo](/assets/blog/verisimilitude/line-of-sight_scope.gif)
+
 _Line of Sight_ is a tactical sniper game that mixes elements of stealth with puzzle-solving and action. Each of the 18 levels is designed with a single target in mind, and you only have one bullet to take them out. You'll need to outsmart the enemies, avoid detection, and use the environment to your advantage to line up the perfect shot. Each level has optional objectives to complete in order to increase your score - it's like sniper minigolf, but you want a high score for each hole.
 
 The game is set in gritty, cyberpunk urban jungle where you play as Ronin, the assassin that corporations call when they want to eliminate the competition quickly and quietly.

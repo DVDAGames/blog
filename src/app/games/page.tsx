@@ -16,9 +16,13 @@ export default async function Games() {
     <main>
       <Container>
         <Header />
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight mb-[20px]">Our Games</h1>
-        <p className="text-md mb-[10px]">What we're building and can't wait for you to play.</p>
-        <article className="mb-32">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight mb-[20px]">
+          Our Games
+        </h1>
+        <p className="text-md mb-[10px]">
+          What we're building and can't wait for you to play.
+        </p>
+        <article className="mb-32 flex flex-wrap gap-5">
           {games.map((game) => (
             <GamePreview
               key={game.slug}

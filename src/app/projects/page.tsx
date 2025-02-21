@@ -16,9 +16,13 @@ export default async function Projects() {
     <main>
       <Container>
         <Header />
-        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight mb-[20px]">Our Projects</h1>
-        <p className="text-md mb-[10px]">Some open-source tools we've created for you to use for free.</p>
-        <article className="mb-32">
+        <h1 className="text-2xl md:text-3xl lg:text-4xl font-bold tracking-tighter leading-tight mb-[20px]">
+          Our Projects
+        </h1>
+        <p className="text-md mb-[10px]">
+          Some open-source tools we've created for you to use for free.
+        </p>
+        <article className="mb-32 flex flex-wrap gap-5">
           {projects.map((project) => (
             <ProjectPreview
               key={project.slug}

@@ -13,11 +13,23 @@ type Props = {
   ctas: CTA[];
 };
 
-export function GamePreview({ title, coverImage, releaseDate, excerpt, slug, price, ctas }: Props) {
+export function GamePreview({
+  title,
+  coverImage,
+  releaseDate,
+  excerpt,
+  slug,
+  price,
+  ctas,
+}: Props) {
   return (
-    <div className="w-[33%]">
+    <div className="w-[100%] md:w-[47%] 2xl:w-[30%]">
       <h3 className="text-xl mb-3 leading-snug">
-        <Link as={`/games/${slug}`} href="/games/[slug]" className="hover:underline">
+        <Link
+          as={`/games/${slug}`}
+          href="/games/[slug]"
+          className="hover:underline"
+        >
           {title}
         </Link>
       </h3>
@@ -25,7 +37,8 @@ export function GamePreview({ title, coverImage, releaseDate, excerpt, slug, pri
         <CoverImage slug={slug} title={title} src={coverImage} type="games" />
       </div>
       <div className="text-lg mb-4">
-        <strong>Release Date:</strong> <DateFormatter dateString={releaseDate} />
+        <strong>Release Date:</strong>{" "}
+        <DateFormatter dateString={releaseDate} />
       </div>
       {typeof ctas !== "undefined" && (
         <div className="mb-4">

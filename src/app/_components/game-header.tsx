@@ -1,4 +1,4 @@
-import CoverImage from "./cover-image";
+import HeroImage from "./hero-image";
 import DateFormatter from "./date-formatter";
 import { PostTitle } from "@/app/_components/post-title";
 import { CTA } from "@/interfaces/cta";
@@ -15,7 +15,7 @@ export function GameHeader({ title, bannerImage, releaseDate, ctas }: Props) {
     <>
       <PostTitle>{title}</PostTitle>
       <div className="mb-8 md:mb-16 sm:mx-0">
-        <CoverImage title={title} src={bannerImage} />
+        <HeroImage title={title} src={bannerImage} />
       </div>
       {typeof ctas !== "undefined" &&
         ctas.length > 0 &&
