@@ -100,21 +100,28 @@ export function Player({
       analyzer.disconnect();
     }
 
-    document.title = oldTitle;
+    console.log(
+      "disconnectAnalyzer",
+      isAnalyzing,
+      source,
+      analyzer,
+      isPlaying,
+      currentTime
+    );
 
-    try {
-      location.hash = "<";
-    } catch (error) {
-      console.error(error);
+    if (isAnalyzing) {
+      document.title = oldTitle;
+
+      try {
+        location.hash = "<";
+      } catch (error) {
+        console.error(error);
+      }
     }
   };
 
   useEffect(() => {
     const analyzerTrackAbortController = new AbortController();
-
-    if (showSpectrumAnalyzer) {
-      disconnectAnalyzer();
-    }
 
     if (playerRef.current && currentTrack) {
       if (isPlaying) {
@@ -140,7 +147,13 @@ export function Player({
       analyzerTrackAbortController.abort();
       disconnectAnalyzer();
     };
-  }, [isPlaying, playerRef.current, currentTrack, showSpectrumAnalyzer]);
+  }, [
+    isPlaying,
+    playerRef.current,
+    currentTrack,
+    showSpectrumAnalyzer,
+    isAnalyzing,
+  ]);
 
   useEffect(() => {
     if (source) {
