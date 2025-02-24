@@ -157,26 +157,14 @@ export function Player({
     isAnalyzing,
   ]);
 
-  useEffect(() => {
-    if (source) {
-      source.addEventListener("timeupdate", (test) => {
-        console.log(test);
-      });
-    }
-
-    return () => {
-      if (source) {
-        source.removeEventListener("timeupdate", () => {});
-      }
-    };
-  }, [source]);
-
   useInterval(
     () => {
       if (isAnalyzing && analyzer && !isMobile) {
-        const dataArray = new Uint8Array(24);
+        const dataArray = new Uint8Array(128);
 
         analyzer.getByteFrequencyData(dataArray);
+
+        console.log(dataArray);
 
         const spectrum = [];
 
