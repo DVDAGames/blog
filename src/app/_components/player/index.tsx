@@ -22,12 +22,7 @@ export interface PlayerProps {
 const audioContext = new AudioContext();
 const analyzer = audioContext.createAnalyser();
 
-export function Player({
-  tracks = [],
-  autoplay = false,
-  loop = false,
-  showSpectrumAnalyzer = false,
-}: PlayerProps) {
+export function Player({ tracks = [], autoplay = false, loop = false, showSpectrumAnalyzer = false }: PlayerProps) {
   const isVisible = useVisibilityChange();
   const isMobile = useIsMobile();
   const [oldTitle] = useState<string>(document.title);
@@ -49,10 +44,7 @@ export function Player({
     setCurrentTime(0);
   };
 
-  const connectAnalyzerToTrack = async (
-    track: Track,
-    abortSignal: AbortSignal
-  ): Promise<void> => {
+  const connectAnalyzerToTrack = async (track: Track, abortSignal: AbortSignal): Promise<void> => {
     if (track && !isMobile) {
       const srcBuffer = await fetch(track.url, {
         signal: abortSignal,
@@ -102,14 +94,7 @@ export function Player({
       analyzer.disconnect();
     }
 
-    console.log(
-      "disconnectAnalyzer",
-      isAnalyzing,
-      source,
-      analyzer,
-      isPlaying,
-      currentTime
-    );
+    console.log("disconnectAnalyzer", isAnalyzing, source, analyzer, isPlaying, currentTime);
 
     if (isAnalyzing) {
       document.title = oldTitle;
@@ -128,10 +113,7 @@ export function Player({
     if (playerRef.current && currentTrack) {
       if (isPlaying) {
         if (showSpectrumAnalyzer && !isMobile) {
-          connectAnalyzerToTrack(
-            currentTrack,
-            analyzerTrackAbortController.signal
-          );
+          connectAnalyzerToTrack(currentTrack, analyzerTrackAbortController.signal);
         } else {
           playerRef.current.play();
         }
@@ -149,18 +131,12 @@ export function Player({
       analyzerTrackAbortController.abort();
       disconnectAnalyzer();
     };
-  }, [
-    isPlaying,
-    playerRef.current,
-    currentTrack,
-    showSpectrumAnalyzer,
-    isAnalyzing,
-  ]);
+  }, [isPlaying, playerRef.current, currentTrack, showSpectrumAnalyzer, isAnalyzing]);
 
   useInterval(
     () => {
       if (isAnalyzing && analyzer && !isMobile) {
-        const dataArray = new Uint8Array(128);
+        const dataArray = new Uint8Array(24);
 
         analyzer.getByteFrequencyData(dataArray);
 
@@ -209,32 +185,17 @@ export function Player({
                 onClick={togglePlaylist}
                 title={showPlaylist ? "Hide Playlist" : "Show Playlist"}
               >
-                <TrackDisplay
-                  title={currentTrack.title}
-                  key={currentTrack.title}
-                  duration={isPlaying ? undefined : 250}
-                />
+                <TrackDisplay title={currentTrack.title} key={currentTrack.title} duration={isPlaying ? undefined : 250} />
               </button>
             )}
           </div>
-          <audio
-            ref={playerRef}
-            className="flex"
-            autoPlay={autoplay}
-            loop={loop}
-            preload="metadata"
-            src={currentTrack.url}
-          />
+          <audio ref={playerRef} className="flex" autoPlay={autoplay} loop={loop} preload="metadata" src={currentTrack.url} />
           <button
             className="h-[96px] w-[96px] appearance-none fixed right-0 bottom-0 bg-white"
             onClick={togglePlay}
             title={isPlaying ? "Pause" : "Play"}
           >
-            <img
-              className="mt-[-10px] ml-[10px]"
-              src={`/assets/images/turntable-4x.${isPlaying ? "gif" : "png"}`}
-              alt=""
-            />
+            <img className="mt-[-10px] ml-[10px]" src={`/assets/images/turntable-4x.${isPlaying ? "gif" : "png"}`} alt="" />
           </button>
         </div>
       </section>
