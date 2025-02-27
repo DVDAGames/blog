@@ -5,6 +5,7 @@ import remarkParse from "remark-parse";
 import remarkRehype from "remark-rehype";
 import { common } from "lowlight";
 import remarkDirective from "remark-directive";
+import remarkFrontmatter from "remark-frontmatter";
 import rehypeHighlight from "rehype-highlight";
 import rehypeAutolinkHeadings from "rehype-autolink-headings";
 import rehypeSlug from "rehype-slug";
@@ -17,6 +18,7 @@ import gdscript from "./gdscript.highlight";
 export default async function markdownToHtml(markdown: string) {
   const result = await unified()
     .use(remarkParse)
+    .use(remarkFrontmatter)
     .use(remarkDirective)
     .use(remarkYoutube)
     .use(remarkVideo, {
