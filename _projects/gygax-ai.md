@@ -12,10 +12,10 @@ ctas:
 price: "FREE"
 ---
 
-Gygax AI is a demo of a local AI-powered Dungeon Master's assistant that uses Retrieval Augmented Generation (RAG) to answer questions about the Fifthe Edition Systems Reference Document (SRD) which we parse and store in a local vector database.
+Gygax AI is a demo of a local AI-powered Dungeon Master's assistant that uses Retrieval Augmented Generation (RAG) to answer questions about the Fifth Edition Systems Reference Document (SRD) which we parse and store in a local vector database.
+
+It's also empowered with function calling to roll dice using the [DVDAGames d20 library](https://github.com/DVDAGames/js-die-roller).
 
 ::video{src=/assets/blog/gygax-ai/gygax-ai-demo.mp4}
 
 **Note**: This demo was specifically created to illustrate running local Large Language Models (LLMs) on low-powered hardware and the project was created and demoed on a 2012 MacBook Pro.
-
-It's also empowered with function calling to roll dice using the [DVDAGames d20 library](https://github.com/DVDAGames/js-die-roller).
