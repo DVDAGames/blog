@@ -1,5 +1,5 @@
 ---
-title: "Hex Flower Engine"
+title: "Hex Flower Engine (Legacy)"
 excerpt: An interactive implementation of Goblin's Henchman's Hex Flower Engine in React, using the better random number generator from our TypeScript dice rolling library for rolls that are more fairly distributed.
 coverImage: /assets/blog/hex-flower-engine/hex-flower.png
 bannerImage: /assets/blog/hex-flower-engine/hex-flower.gif
@@ -11,6 +11,9 @@ ctas:
     url: "https://dvdagames.github.io/react-hex-flower-engine/"
 price: "FREE"
 ---
+
+**Note**: This is the legacy version of the Hex Flower Engine application, for the most up to date version, check out the new [Hex v2 Web Application](/projects/hex-v2/).
+
 The [Hex Flower Engine](https://goblinshenchman.wordpress.com/2018/10/25/2d6-hex-power-flower/) is an ingenious invention from [Goblin's Henchman](https://goblinshenchman.wordpress.com/) that gives Game Masters (GMs) and Dungeon Masters (DMs) a way to generate random results that are more predictable and feel more realistic than a simple table or a single die roll.
 
 > A versatile game engine using 2D6 and a 19-Hex Flower (it’s like a random table, but with a memory).
