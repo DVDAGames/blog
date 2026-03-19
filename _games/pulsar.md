@@ -2,9 +2,9 @@
 title: "Pulsar"
 excerpt: A fast-paced mashup of bullet hell and asteroids where you play as a sentient amorphous cloud that can transform into a spaceship and shoot at enemies.
 coverImage: "/assets/blog/hello-world/pulsar-screenshot.png"
-bannerImage: "/assets/blog/pulsar/pulsar-demo.gif"
+bannerImage: "/assets/blog/hello-world/pulsar-demo.gif"
 ogImage:
-  url: "/assets/blog/pulsar/cover.png"
+  url: "/assets/blog/hello-world/pulsar-screenshot.png"
 date: "2016-04-20"
 price: "FREE"
 ctas:
