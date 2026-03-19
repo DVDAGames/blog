@@ -2,9 +2,9 @@
 title: "Hex v2 Web Application"
 excerpt: An interactive implementation of Goblin's Henchman's Hex Flower Engine that allows you to create, share, and run your own Hex Flower Engines across all of your devices. This version supports user accounts, and includes an interactive Hex Flower Engine Editor and the Garden, where game masters can publish their Hex Flower Engines for others to use.
 coverImage: /assets/blog/hex-flower-engine/hex-v2-square.png
-bannerImage: /assets/blog/hex-flower-engine/hex-v2.png
+bannerImage: /assets/blog/hex-flower-engine/hex-project-garden.png
 ogImage:
-  url: /assets/blog/hex-flower-engine/hex-v2.png
+  url: /assets/blog/hex-flower-engine/hex-project-garden.png
 date: 2026-02-08
 ctas:
   - label: "Start Hex Flowering"
