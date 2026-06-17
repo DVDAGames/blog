@@ -2,6 +2,13 @@ import type { Track } from "../../../lib/types";
 
 const trackList: Track[] = [
   {
+    title: "Out to Sea (Sailman)",
+    url: "/assets/audio/tracks/sailman-at-sea.wav",
+    mime: "audio/wav",
+    description: "Created using BeepBox for the Sailman prototype.",
+    albumArt: "/assets/album-art/sailman-square.png",
+  },
+  {
     title: "Line of Sight (Prototype)",
     url: "/assets/audio/tracks/line-of-sight-prototype.wav",
     mime: "audio/wav",

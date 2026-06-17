@@ -5,7 +5,7 @@ coverImage: /assets/blog/line-of-sight/cover.png
 bannerImage: /assets/blog/line-of-sight/hero.png
 ogImage:
   url: /assets/blog/line-of-sight/cover.png
-date: "In Development"
+date: "TBD"
 price: ""
 ---
 
